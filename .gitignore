@@ -130,3 +130,5 @@ dmypy.json
 
 # custom setup.sh
 setup.sh
+
+config.yaml

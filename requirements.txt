@@ -9,5 +9,5 @@ python-jose[cryptography]
 python-multipart
 pyyaml
 requests
-SQLAlchemy
+SQLAlchemy<14.0
 uvicorn

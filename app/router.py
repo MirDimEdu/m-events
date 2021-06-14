@@ -11,7 +11,7 @@ router = APIRouter(
     prefix='/event'
 )
 
-router_m = APIRouter(
+router_multiple = APIRouter(
     prefix='/events'
 )
 
@@ -32,7 +32,7 @@ async def create_event(event: schemas.CreateEvent,
     return HTTPanswer(201, event_id)
 
 
-@router_m.get('/all')
+@router_multiple.get('/all')
 async def get_all_events(offset: Optional[int] = Query(None), limit: Optional[int] = Query(None)):
     return await logic.get_all_events(offset, limit)
 

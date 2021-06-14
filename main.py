@@ -7,10 +7,20 @@ from app.config import cfg
 
 if __name__ == '__main__':
     parser = ArgumentParser(description='Events Management micro-service')
-    parser.add_argument('--create-tables',
+    parser.add_argument('--Create-Tables', '-CT',
                         action='store_true',
                         dest='recreate_tables',
-                        help='(Re)Creating events database tables before launch.')
+                        help='(Re)Creating events database tables before launch')
+    parser.add_argument('-H', '--Host',
+                        required=True,
+                        action='store',
+                        dest='host',
+                        help='Server host')
+    parser.add_argument('-P', '--Port',
+                        required=True,
+                        action='store',
+                        dest='port',
+                        help='Server port')
 
     args = parser.parse_args()
     if args.recreate_tables:
@@ -21,8 +31,8 @@ if __name__ == '__main__':
 
     uvicorn.run(
         'main:app',
-        host=cfg.HOST,
-        port=cfg.PORT,
+        host=args.host,
+        port=int(args.port),
         log_config=log_config,
         reload=False
     )
