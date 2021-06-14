@@ -1,0 +1,13 @@
+aiofile
+aiopg
+asyncpg
+databases[postgresql]
+fastapi
+httpx
+psycopg2
+python-jose[cryptography]
+python-multipart
+pyyaml
+requests
+SQLAlchemy<14.0
+uvicorn
